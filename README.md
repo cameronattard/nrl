@@ -1,5 +1,8 @@
 # NRL
 
+[![Build Status](https://travis-ci.org/cameronattard/nrl.svg?branch=master)](https://travis-ci.org/cameronattard/nrl)
+[![Code Climate](https://codeclimate.com/github/cameronattard/nrl/badges/gpa.svg)](https://codeclimate.com/github/cameronattard/nrl)
+
 A Ruby wrapper library for the NRL API.
 
 ## Installation
