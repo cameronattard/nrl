@@ -1,4 +1,46 @@
 module NRL
+  # Encapsulates an NRL match.
+  #
+  # @!attribute id
+  #   @return [Integer] a unique match identifier
+  # @!attribute round
+  #   @return [Integer] the id of the match's round
+  # @!attribute match
+  #   @return [Integer] the match's id
+  # @!attribute home_squad_id
+  #   @return [Integer] the home team's id
+  # @!attribute home_squad_odds
+  #   @return [Float] the home team's wagering odds
+  # @!attribute away_squad_id
+  #   @return [Integer] the away team's id
+  # @!attribute away_squad_odds
+  #   @return [Float] the away team's wagering odds
+  # @!attribute venue_id
+  #   @return [Integer] unique identifier for the match's host venue
+  # @!attribute status
+  #   @return [String] the match's status
+  # @!attribute date
+  #   @return [DateTime] the scheduled match date
+  # @!attribute is_first
+  #   @return [Boolean] true if the match is scheduled first in its round
+  # @!attribute is_last
+  #   @return [Boolean] true if the match is scheduled last in its round
+  # @!attribute is_match_day
+  #   @return [Boolean] true if the match is scheduled for today
+  # @!attribute is_margin_game
+  #   @return [Boolean] TODO: write documentation
+  # @!attribute hashtag
+  #   @return [String] the match's promotional hashtag
+  # @!attribute venue_name
+  #   @return [String] the name of the match's host venue
+  # @!attribute home_squad_name
+  #   @return [String] the home team's name
+  # @!attribute away_squad_name
+  #   @return [String] the away team's name
+  # @!attribute home_score
+  #   @return [Integer] the home team's score
+  # @!attribute away_score
+  #   @return [Integer] the away team's score
   class Match < Base
     include Virtus.model
 
@@ -25,8 +67,11 @@ module NRL
     attribute :home_score, Integer
     attribute :away_score, Integer
 
+    # Get all season matches
+    #
+    # @return [Array<Match>] an array of all matches
     def self.all
-      Round.all.map { |round| round.matches }.flatten
+      Round.all.map(&:matches).flatten
     end
   end
 end
