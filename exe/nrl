@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'nrl'
+require 'thor'
+
+module NRL
+  # Command Line Interface
+  class CLI < Thor
+    desc 'ladder', 'Display the current competition ladder'
+    def ladder
+      puts Ladder.new.table
+    end
+
+    desc 'round ROUND_NUMBER', 'Display a competition round'
+    def round(round_number = nil)
+      round = round_number.nil? ? Round.current : Round.find(round_number.to_i)
+      puts round.table
+    end
+  end
+end
+
+NRL::CLI.start(ARGV)

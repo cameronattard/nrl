@@ -1,5 +1,6 @@
 require 'faraday'
 require 'faraday_middleware'
+require 'terminal-table'
 require 'virtus'
 
 require 'nrl/version'
@@ -7,6 +8,7 @@ require 'nrl/base'
 require 'nrl/team'
 require 'nrl/match'
 require 'nrl/round'
+require 'nrl/ladder'
 
 module NRL
   BASE_URL =

@@ -36,11 +36,27 @@ module NRL
       connection.get('rounds.json').body.map { |attrs| Round.new(attrs) }
     end
 
+    # Get the current round
+    #
+    # @return [Round] the current round
+    def self.current
+      all.find { |round| round.end >= DateTime.now }
+    end
+
     # Find a round by its id
     #
     # @return [Round] a round matching the provided id
     def self.find(id)
-      all.detect { |round| round.id == id }
+      all.find { |round| round.id == id }
+    end
+
+    # Construct an ASCII table of the competition round
+    #
+    # @return [Terminal::Table] an ASCII table representing the round
+    def table
+      headings = %w(Home Score Away Venue Kickoff)
+      rows = matches.map(&:round_row)
+      Terminal::Table.new(headings: headings, rows: rows)
     end
   end
 end

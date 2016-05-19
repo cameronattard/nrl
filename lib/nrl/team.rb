@@ -48,5 +48,12 @@ module NRL
         match.home_squad_id == id || match.away_squad_id == id
       end
     end
+
+    # Format the match into an array for Ladder table insertion
+    #
+    # @return [Array<String>] an array containing team details
+    def ladder_row
+      [name, games, win, loss, draw, points, margin]
+    end
   end
 end

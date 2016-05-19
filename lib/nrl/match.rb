@@ -73,5 +73,18 @@ module NRL
     def self.all
       Round.all.map(&:matches).flatten
     end
+
+    # Format the match into an array for Round table insertion
+    #
+    # @return [Array<String>] an array containing match details
+    def round_row
+      [
+        "($#{home_squad_odds}) #{home_squad_name} ",
+        status == 'scheduled' ? '' : "#{home_score} - #{away_score}",
+        "#{away_squad_name} ($#{away_squad_odds})",
+        venue_name,
+        date.strftime('%d/%m/%Y %I:%M%p')
+      ]
+    end
   end
 end
