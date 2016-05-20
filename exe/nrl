@@ -11,7 +11,7 @@ module NRL
       puts Ladder.new.table
     end
 
-    desc 'round ROUND_NUMBER', 'Display a competition round'
+    desc 'round [ROUND_NUMBER]', 'Display a competition round'
     def round(round_number = nil)
       round = round_number.nil? ? Round.current : Round.find(round_number.to_i)
       puts round.table
