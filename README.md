@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/cameronattard/nrl.svg?branch=master)](https://travis-ci.org/cameronattard/nrl)
 [![Code Climate](https://codeclimate.com/github/cameronattard/nrl/badges/gpa.svg)](https://codeclimate.com/github/cameronattard/nrl)
 
-A Ruby wrapper library for the NRL API.
+A Ruby wrapper library and CLI tool for the NRL API.
 
 ## Installation
 
@@ -32,6 +32,8 @@ Commands:
 
 $ nrl ladder
 +------------+-------+-----+------+------+--------+------+
+|                       NRL Ladder                       |
++------------+-------+-----+------+------+--------+------+
 | Team       | Games | Won | Lost | Draw | Points | PD   |
 +------------+-------+-----+------+------+--------+------+
 | Broncos    | 11    | 8   | 3    | 0    | 16     | 158  |
@@ -54,6 +56,8 @@ $ nrl ladder
 +------------+-------+-----+------+------+--------+------+
 
 $ nrl round
++-------------------+---------+--------------------+-----------------------------+--------------------+
+|                                            NRL Round 11                                             |
 +-------------------+---------+--------------------+-----------------------------+--------------------+
 | Home              | Score   | Away               | Venue                       | Kickoff            |
 +-------------------+---------+--------------------+-----------------------------+--------------------+
@@ -78,3 +82,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/cameronattard/nrl.
 
+## Author's Note
+
+Up the mighty Penrith Panthers!

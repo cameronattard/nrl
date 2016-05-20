@@ -56,7 +56,11 @@ module NRL
     def table
       headings = %w(Home Score Away Venue Kickoff)
       rows = matches.map(&:round_row)
-      Terminal::Table.new(headings: headings, rows: rows)
+      Terminal::Table.new(
+        title: "NRL Round #{id}",
+        headings: headings,
+        rows: rows
+      )
     end
   end
 end

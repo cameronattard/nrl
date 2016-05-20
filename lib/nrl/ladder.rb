@@ -7,7 +7,7 @@ module NRL
     def table
       headings = %w(Team Games Won Lost Draw Points PD)
       rows = Team.all.map(&:ladder_row).insert(8, :separator)
-      Terminal::Table.new(headings: headings, rows: rows)
+      Terminal::Table.new(title: 'NRL Ladder', headings: headings, rows: rows)
     end
   end
 end
